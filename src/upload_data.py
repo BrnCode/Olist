@@ -25,6 +25,7 @@ files_names = [i for i in os.listdir( DATA_DIR ) if i.endswith('.csv')]
 # Abrindo conexão com banco
 
 str_connection = str_connection.format( path=os.path.join( DATA_DIR, 'olist.db' ) ) # Conexão com o banco local
+connection = sqlalchemy.create_engine( str_connection )
 
 # Para cada arquivo é realizado uma inserção no banco 
 for i in files_names:
